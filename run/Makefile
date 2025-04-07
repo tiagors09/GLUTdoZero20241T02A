@@ -61,7 +61,8 @@ SOURCES       = ../main.cpp \
 		../bib/Vetor3D.cpp \
 		../gui_glut/extra.cpp \
 		../gui_glut/gui.cpp \
-		../gui_glut/OpenTextures.cpp 
+		../gui_glut/OpenTextures.cpp \
+		../pyramid.cpp 
 OBJECTS       = main.o \
 		Camera.o \
 		CameraDistante.o \
@@ -71,7 +72,8 @@ OBJECTS       = main.o \
 		Vetor3D.o \
 		extra.o \
 		gui.o \
-		OpenTextures.o
+		OpenTextures.o \
+		pyramid.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -151,7 +153,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		bib/Vetor3D.h \
 		gui_glut/extra.h \
 		gui_glut/gui.h \
-		gui_glut/OpenTextures.h ../main.cpp \
+		gui_glut/OpenTextures.h \
+		pyramid.h ../main.cpp \
 		../bib/Camera.cpp \
 		../bib/CameraDistante.cpp \
 		../bib/CameraJogo.cpp \
@@ -160,7 +163,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../bib/Vetor3D.cpp \
 		../gui_glut/extra.cpp \
 		../gui_glut/gui.cpp \
-		../gui_glut/OpenTextures.cpp
+		../gui_glut/OpenTextures.cpp \
+		../pyramid.cpp
 QMAKE_TARGET  = GLUTdoZero20241
 DESTDIR       = 
 TARGET        = GLUTdoZero20241
@@ -367,7 +371,8 @@ main.o: ../main.cpp ../gui_glut/gui.h \
 		../bib/Vetor3D.h \
 		../bib/CameraJogo.h \
 		../bib/Desenha.h \
-		../bib/model3ds.h
+		../bib/model3ds.h \
+		../pyramid.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 Camera.o: ../bib/Camera.cpp ../bib/Camera.h \
@@ -415,6 +420,17 @@ gui.o: ../gui_glut/gui.cpp ../gui_glut/gui.h \
 
 OpenTextures.o: ../gui_glut/OpenTextures.cpp ../gui_glut/OpenTextures.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o OpenTextures.o ../gui_glut/OpenTextures.cpp
+
+pyramid.o: ../pyramid.cpp ../pyramid.h \
+		../gui_glut/gui.h \
+		../gui_glut/extra.h \
+		../bib/CameraDistante.h \
+		../bib/Camera.h \
+		../bib/Vetor3D.h \
+		../bib/CameraJogo.h \
+		../bib/Desenha.h \
+		../bib/model3ds.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pyramid.o ../pyramid.cpp
 
 ####### Install
 

@@ -3,6 +3,7 @@
 using namespace std;
 
 #include <gui.h>
+#include "pyramid.h"
 
 Vetor3D posEsfera = Vetor3D(2,1,0);
 float raioEsfera = 0.2;
@@ -19,11 +20,14 @@ void desenha() {
             GUI::setColor(0.8,0.0,0.0,1,true);
             GUI::drawFloor(5,5);
 
-            // Bola vermelha
+            // Bola verde
+            /*
             GUI::setColor(0.0,0.8,0.0,1,true);
             GUI::drawSphere(2,1.001,0,0.2);
+            */
 
-            // Bola verde
+            // Bola vermelha
+            /*
             GUI::setColor(0.8,0.0,0.0,1,true);
             GUI::drawSphere(
                         posEsfera.x,
@@ -31,6 +35,30 @@ void desenha() {
                         posEsfera.z,
                         raioEsfera
                         );
+            */
+            // Caixa verde
+            // GUI::setColor(0.0,0.8,0.0,1,true);
+            // GUI::drawBox(-1,-1,-1,1,1,1);
+
+            /*
+                glBegin(GL_POINTS);
+                    glVertex3f(0,0,0);
+                    glVertex3f(1,0,0);
+                    glVertex3f(1,1,0);
+                glEnd();
+            */
+
+            /*
+            glBegin(GL_POLYGON);
+                glNormal3f(0,0,1);
+                glVertex3f(0,0,0);
+                glVertex3f(1,0,0);
+                glVertex3f(1,1,0);
+            glEnd();
+            */
+
+            Pyramid p(1);
+            p.draw();
 
             posEsfera.x += glutGUI::drx;
             posEsfera.y += glutGUI::dry;
