@@ -6,8 +6,8 @@
 
 //texture
 bool renderTexture = true;
-GLuint tList[7]; // Array of 4 texture objects
-enum { GRANITO = 0, MARMORE, LADRILHO, REFRI, SKY, KICK_ASS, QUADRICULADO };
+GLuint tList[9]; // Array of 4 texture objects
+enum { GRANITO = 0, MARMORE, LADRILHO, REFRI, SKY, KICK_ASS, QUADRICULADO, OBAMA, WOOD };
 int texture_id = 0;
 bool texture_automatic = false;
 enum { OBJECT = 0, EYE, SPHERE_MAP };
@@ -27,7 +27,7 @@ void GUI::loadTextures() {
 
 
     // Generate 7 texture object ID's
-    glGenTextures(7, tList);
+    glGenTextures(9, tList);
 
     glBindTexture(GL_TEXTURE_2D, tList[GRANITO]);
     //carrega a imagem e seta parametros de mapeamento de textura
@@ -56,6 +56,14 @@ void GUI::loadTextures() {
     glBindTexture(GL_TEXTURE_2D, tList[QUADRICULADO]);
     //carrega a imagem e seta parametros de mapeamento de textura
     OT::loadTexture( "../textures/quadriculado.bmp", true );
+
+    glBindTexture(GL_TEXTURE_2D, tList[OBAMA]);
+    //carrega a imagem e seta parametros de mapeamento de textura
+    OT::loadTexture( "../textures/obama.jpg", true );
+
+    glBindTexture(GL_TEXTURE_2D, tList[WOOD]);
+    //carrega a imagem e seta parametros de mapeamento de textura
+    OT::loadTexture( "../textures/wood.jpg", true );
 }
 
 void GUI::habilitaTextura( bool renderTexture, bool texture_automatic, int texture_mode ) {

@@ -6,13 +6,14 @@ using namespace std;
 #include "pyramid.h"
 
 Vetor3D posEsfera = Vetor3D(2,1,0);
-float raioEsfera = 0.2;
+float raioEsfera = 1;
+
+Model3DS carro = Model3DS("../3ds/cartest.3DS");
+
 void desenha() {
     GUI::displayInit();
         {
             GUI::setLight(0,0,3,0,true,false);
-
-
 
             //GUI::drawOrigin(.5);
             GUI::drawOriginAL(5);
@@ -36,6 +37,21 @@ void desenha() {
                         raioEsfera
                         );
             */
+
+            GUI::setColor(1,1,1,1,true);
+            /*
+            GUI::drawHalfSphere(
+                        posEsfera.x,
+                        posEsfera.y,
+                        posEsfera.z,
+                        raioEsfera
+                        );
+
+            GUI::drawSphereInsideBox222(posEsfera.x - 2,
+                                        posEsfera.y,
+                                        posEsfera.z,
+                                        raioEsfera + 1);
+            */
             // Caixa verde
             // GUI::setColor(0.0,0.8,0.0,1,true);
             // GUI::drawBox(-1,-1,-1,1,1,1);
@@ -57,15 +73,37 @@ void desenha() {
             glEnd();
             */
 
-            Pyramid p(1);
+            GUI::habilitaTextura(true, false, 0);
+            GUI::selecionaTextura(7);
+
+            Pyramid p(5);
             p.draw();
+
+            GUI::desabilitaTextura(true, false);
+
+            /*
+            glRotatef(270,1,0,0);
+
+            GLdouble plane[4] = {
+                1.0,
+                0.0,
+                1.0,
+                0.5
+            };
+
+            glClipPlane(GL_CLIP_PLANE0, plane);
+            glEnable(GL_CLIP_PLANE0);
+                GUI::drawSphere(0,0,0,1);
+            glDisable(GL_CLIP_PLANE0);
 
             posEsfera.x += glutGUI::drx;
             posEsfera.y += glutGUI::dry;
             posEsfera.z += glutGUI::dlrx * 0.125;
             raioEsfera += glutGUI::dlx * 0.125;
+            */
 
-        }
+            // GUI::draw3ds(carro);
+        }   
     GUI::displayEnd();
 }
 

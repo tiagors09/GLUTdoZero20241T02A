@@ -17,9 +17,9 @@ void Pyramid::draw() {
     glBegin(GL_POLYGON);
         glNormal3f(0,0,size/2);
 
-        glVertex3f(0,0,0);
-        glVertex3f(size,0,0);
-        glVertex3f(size / 2,size,-size/2);
+        glTexCoord2f(0, 0); glVertex3f(0,0,0);
+        glTexCoord2f(.5, 1); glVertex3f(size,0,0);
+        glTexCoord2f(1, 0); glVertex3f(size / 2,size,-size/2);
     glEnd();
 
     // Lateral direita
