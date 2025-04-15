@@ -76,7 +76,7 @@ void desenha() {
             GUI::habilitaTextura(true, false, 0);
             GUI::selecionaTextura(7);
 
-            Pyramid p(5);
+            Pyramid p(9);
             p.draw();
 
             GUI::desabilitaTextura(true, false);

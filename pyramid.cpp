@@ -18,17 +18,44 @@ void Pyramid::draw() {
         glNormal3f(0,0,size/2);
 
         glTexCoord2f(0, 0); glVertex3f(0,0,0);
-        glTexCoord2f(.5, 1); glVertex3f(size,0,0);
-        glTexCoord2f(1, 0); glVertex3f(size / 2,size,-size/2);
+        glTexCoord2f(1, 0); glVertex3f(size,0,0);
+        glTexCoord2f(.5, 1); glVertex3f(size / 2,size,-size/2);
     glEnd();
 
     // Lateral direita
     glBegin(GL_POLYGON);
         glNormal3f(size/2,0,0);
 
-        glVertex3f(size,0,0);
-        glVertex3f(size,0,-size);
-        glVertex3f(size/2,size,-size/2);
+        glTexCoord2f(0, 0); glVertex3f(size,0,0);
+        glTexCoord2f(1, 0); glVertex3f(size,0,-size);
+        glTexCoord2f(.5, 1); glVertex3f(size/2,size,-size/2);
     glEnd();
 
+    // Lateral esquerda
+    glBegin(GL_POLYGON);
+        glNormal3f(size/2,0,0);
+
+        glTexCoord2f(0, 0); glVertex3f(0,0,0);
+        glTexCoord2f(.5, 1); glVertex3f(size/2,size,-size/2);
+        glTexCoord2f(1, 0); glVertex3f(0,0,-size);
+    glEnd();
+
+    // Trás
+    glBegin(GL_POLYGON);
+        glNormal3f(size/2,0,0);
+
+        glTexCoord2f(0, 0); glVertex3f(size,0,-size);
+        glTexCoord2f(1, 0); glVertex3f(0,0,-size);
+        glTexCoord2f(.5, 1); glVertex3f(size/2,size,-size/2);
+    glEnd();
+
+    // Base
+    glBegin(GL_POLYGON);
+        glNormal3f(0,-1,0);
+
+        glTexCoord2f(0, 0); glVertex3f(0,0,0);
+        glTexCoord2f(1, 0); glVertex3f(0,0,-size);
+        glTexCoord2f(1, 1); glVertex3f(size,0,-size);
+        glTexCoord2f(0, 1); glVertex3f(size,0,0);
+    glEnd();
 }
