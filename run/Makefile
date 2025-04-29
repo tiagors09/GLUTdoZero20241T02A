@@ -62,7 +62,9 @@ SOURCES       = ../main.cpp \
 		../gui_glut/extra.cpp \
 		../gui_glut/gui.cpp \
 		../gui_glut/OpenTextures.cpp \
-		../pyramid.cpp 
+		../pyramid.cpp \
+		../Objeto.cpp \
+		../BlocoTerra.cpp 
 OBJECTS       = main.o \
 		Camera.o \
 		CameraDistante.o \
@@ -73,7 +75,9 @@ OBJECTS       = main.o \
 		extra.o \
 		gui.o \
 		OpenTextures.o \
-		pyramid.o
+		pyramid.o \
+		Objeto.o \
+		BlocoTerra.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -154,7 +158,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		gui_glut/extra.h \
 		gui_glut/gui.h \
 		gui_glut/OpenTextures.h \
-		pyramid.h ../main.cpp \
+		pyramid.h \
+		Objeto.h \
+		BlocoTerra.h ../main.cpp \
 		../bib/Camera.cpp \
 		../bib/CameraDistante.cpp \
 		../bib/CameraJogo.cpp \
@@ -164,7 +170,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../gui_glut/extra.cpp \
 		../gui_glut/gui.cpp \
 		../gui_glut/OpenTextures.cpp \
-		../pyramid.cpp
+		../pyramid.cpp \
+		../Objeto.cpp \
+		../BlocoTerra.cpp
 QMAKE_TARGET  = GLUTdoZero20241
 DESTDIR       = 
 TARGET        = GLUTdoZero20241
@@ -372,7 +380,8 @@ main.o: ../main.cpp ../gui_glut/gui.h \
 		../bib/CameraJogo.h \
 		../bib/Desenha.h \
 		../bib/model3ds.h \
-		../pyramid.h
+		../Objeto.h \
+		../BlocoTerra.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 Camera.o: ../bib/Camera.cpp ../bib/Camera.h \
@@ -431,6 +440,29 @@ pyramid.o: ../pyramid.cpp ../pyramid.h \
 		../bib/Desenha.h \
 		../bib/model3ds.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pyramid.o ../pyramid.cpp
+
+Objeto.o: ../Objeto.cpp ../Objeto.h \
+		../gui_glut/gui.h \
+		../gui_glut/extra.h \
+		../bib/CameraDistante.h \
+		../bib/Camera.h \
+		../bib/Vetor3D.h \
+		../bib/CameraJogo.h \
+		../bib/Desenha.h \
+		../bib/model3ds.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Objeto.o ../Objeto.cpp
+
+BlocoTerra.o: ../BlocoTerra.cpp ../BlocoTerra.h \
+		../Objeto.h \
+		../gui_glut/gui.h \
+		../gui_glut/extra.h \
+		../bib/CameraDistante.h \
+		../bib/Camera.h \
+		../bib/Vetor3D.h \
+		../bib/CameraJogo.h \
+		../bib/Desenha.h \
+		../bib/model3ds.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BlocoTerra.o ../BlocoTerra.cpp
 
 ####### Install
 
