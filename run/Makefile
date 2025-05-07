@@ -68,7 +68,8 @@ SOURCES       = ../main.cpp \
 		../floor.cpp \
 		../woodblock.cpp \
 		../treetrunk.cpp \
-		../leafblock.cpp 
+		../leafblock.cpp \
+		../tallgrass.cpp 
 OBJECTS       = main.o \
 		Camera.o \
 		CameraDistante.o \
@@ -85,7 +86,8 @@ OBJECTS       = main.o \
 		floor.o \
 		woodblock.o \
 		treetrunk.o \
-		leafblock.o
+		leafblock.o \
+		tallgrass.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -172,7 +174,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		floor.h \
 		woodblock.h \
 		treetrunk.h \
-		leafblock.h ../main.cpp \
+		leafblock.h \
+		tallgrass.h ../main.cpp \
 		../bib/Camera.cpp \
 		../bib/CameraDistante.cpp \
 		../bib/CameraJogo.cpp \
@@ -188,7 +191,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../floor.cpp \
 		../woodblock.cpp \
 		../treetrunk.cpp \
-		../leafblock.cpp
+		../leafblock.cpp \
+		../tallgrass.cpp
 QMAKE_TARGET  = GLUTdoZero20241
 DESTDIR       = 
 TARGET        = GLUTdoZero20241
@@ -401,7 +405,9 @@ main.o: ../main.cpp ../gui_glut/gui.h \
 		../BlocoTerra.h \
 		../Objeto.h \
 		../woodblock.h \
-		../treetrunk.h
+		../treetrunk.h \
+		../leafblock.h \
+		../tallgrass.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 Camera.o: ../bib/Camera.cpp ../bib/Camera.h \
@@ -509,7 +515,18 @@ woodblock.o: ../woodblock.cpp ../woodblock.h \
 		../bib/model3ds.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o woodblock.o ../woodblock.cpp
 
-treetrunk.o: ../treetrunk.cpp 
+treetrunk.o: ../treetrunk.cpp ../treetrunk.h \
+		../woodblock.h \
+		../Objeto.h \
+		../gui_glut/gui.h \
+		../gui_glut/extra.h \
+		../bib/CameraDistante.h \
+		../bib/Camera.h \
+		../bib/Vetor3D.h \
+		../bib/CameraJogo.h \
+		../bib/Desenha.h \
+		../bib/model3ds.h \
+		../leafblock.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o treetrunk.o ../treetrunk.cpp
 
 leafblock.o: ../leafblock.cpp ../leafblock.h \
@@ -523,6 +540,18 @@ leafblock.o: ../leafblock.cpp ../leafblock.h \
 		../bib/Desenha.h \
 		../bib/model3ds.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o leafblock.o ../leafblock.cpp
+
+tallgrass.o: ../tallgrass.cpp ../tallgrass.h \
+		../Objeto.h \
+		../gui_glut/gui.h \
+		../gui_glut/extra.h \
+		../bib/CameraDistante.h \
+		../bib/Camera.h \
+		../bib/Vetor3D.h \
+		../bib/CameraJogo.h \
+		../bib/Desenha.h \
+		../bib/model3ds.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tallgrass.o ../tallgrass.cpp
 
 ####### Install
 

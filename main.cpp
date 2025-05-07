@@ -7,6 +7,7 @@ using namespace std;
 #include "floor.h"
 #include "woodblock.h"
 #include "treetrunk.h"
+#include "tallgrass.h"
 
 Vetor3D posEsfera = Vetor3D(2,1,0);
 float raioEsfera = 1;
@@ -33,6 +34,21 @@ void desenha() {
 
             TreeTrunk tt(Vetor3D(0,1,0), 3);
             tt.desenha();
+
+            TallGrass tg[10];
+
+            tg[0].desenha(Vetor3D(1, 1, 0));     // Mantido
+
+            tg[1].desenha(Vetor3D(-2, 0, 1));
+            tg[2].desenha(Vetor3D(3, 0, -1));
+            tg[3].desenha(Vetor3D(-4, 0, 2));
+            tg[4].desenha(Vetor3D(0, 0, 3));
+            tg[5].desenha(Vetor3D(2, 0, 2));
+            tg[6].desenha(Vetor3D(-1, 0, -3));
+            tg[7].desenha(Vetor3D(4, 0, 1));
+            tg[8].desenha(Vetor3D(-3, 0, -2));
+            tg[9].desenha(Vetor3D(0, 0, -4));
+
         }
     GUI::displayEnd();
 }

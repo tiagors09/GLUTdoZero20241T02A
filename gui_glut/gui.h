@@ -16,6 +16,7 @@ enum { GRANITO = 0,
        TREE_SIDE = 12,
        LEAF = 13,
        TREE_TOP = 14,
+       TALL_GRASS = 15
      };
 
 typedef void (* displayFunction)( void );

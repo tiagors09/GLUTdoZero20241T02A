@@ -6,7 +6,7 @@
 
 //texture
 bool renderTexture = true;
-GLuint tList[15]; // Array of 4 texture objects
+GLuint tList[16]; // Array of 4 texture objects
 
 int texture_id = 0;
 bool texture_automatic = false;
@@ -27,7 +27,7 @@ void GUI::loadTextures() {
 
 
     // Generate 7 texture object ID's
-    glGenTextures(15, tList);
+    glGenTextures(16, tList);
 
     glBindTexture(GL_TEXTURE_2D, tList[GRANITO]);
     //carrega a imagem e seta parametros de mapeamento de textura
@@ -88,6 +88,10 @@ void GUI::loadTextures() {
     glBindTexture(GL_TEXTURE_2D, tList[LEAF]);
     //carrega a imagem e seta parametros de mapeamento de textura
     OT::loadTexture( "../textures/minecraft/textures/blocks/leaf.png", true );
+
+    glBindTexture(GL_TEXTURE_2D, tList[TALL_GRASS]);
+    //carrega a imagem e seta parametros de mapeamento de textura
+    OT::loadTexture( "../textures/minecraft/textures/blocks/tallgrass.png", true );
 }
 
 void GUI::habilitaTextura( bool renderTexture, bool texture_automatic, int texture_mode ) {
