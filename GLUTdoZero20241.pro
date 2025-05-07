@@ -22,7 +22,8 @@ SOURCES += main.cpp \
     pyramid.cpp \
     Objeto.cpp \
     BlocoTerra.cpp \
-    floor.cpp
+    floor.cpp \
+    woodblock.cpp
 
 HEADERS += \
     bib/Camera.h \
@@ -37,4 +38,5 @@ HEADERS += \
     pyramid.h \
     Objeto.h \
     BlocoTerra.h \
-    floor.h
+    floor.h \
+    woodblock.h

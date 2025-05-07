@@ -1,17 +1,17 @@
-#include "BlocoTerra.h"
+#include "woodblock.h"
 
 #include <gui.h>
 
-BlocoTerra::BlocoTerra() {
+WoodBlock::WoodBlock() {
 
 }
 
-void BlocoTerra::desenha(Vetor3D t, Vetor3D a, Vetor3D s) {
+void WoodBlock::desenha(Vetor3D t, Vetor3D a, Vetor3D s) {
     glPushMatrix();
     Objeto::desenha(t, a, s);
 
     GUI::habilitaTextura(true, false, 0);
-    GUI::selecionaTextura(GRASS);
+    GUI::selecionaTextura(TREE_SIDE);
 
         // Frente
         glBegin(GL_POLYGON);
@@ -52,7 +52,7 @@ void BlocoTerra::desenha(Vetor3D t, Vetor3D a, Vetor3D s) {
     GUI::desabilitaTextura(true, false);
 
     GUI::habilitaTextura(true, false, 0);
-    GUI::selecionaTextura(GRASS2);
+    GUI::selecionaTextura(TREE_SIDE);
         // Cima
         glBegin(GL_POLYGON);
             glNormal3f(0,0,1);
@@ -65,7 +65,7 @@ void BlocoTerra::desenha(Vetor3D t, Vetor3D a, Vetor3D s) {
 
 
     GUI::habilitaTextura(true, false, 0);
-    GUI::selecionaTextura(DIRT);
+    GUI::selecionaTextura(TREE_SIDE);
         // Baixo (corrigido)
         glBegin(GL_POLYGON);
             glNormal3f(0,-1,0);

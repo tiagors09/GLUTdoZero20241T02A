@@ -65,7 +65,8 @@ SOURCES       = ../main.cpp \
 		../pyramid.cpp \
 		../Objeto.cpp \
 		../BlocoTerra.cpp \
-		../floor.cpp 
+		../floor.cpp \
+		../woodblock.cpp 
 OBJECTS       = main.o \
 		Camera.o \
 		CameraDistante.o \
@@ -79,7 +80,8 @@ OBJECTS       = main.o \
 		pyramid.o \
 		Objeto.o \
 		BlocoTerra.o \
-		floor.o
+		floor.o \
+		woodblock.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -163,7 +165,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		pyramid.h \
 		Objeto.h \
 		BlocoTerra.h \
-		floor.h ../main.cpp \
+		floor.h \
+		woodblock.h ../main.cpp \
 		../bib/Camera.cpp \
 		../bib/CameraDistante.cpp \
 		../bib/CameraJogo.cpp \
@@ -176,7 +179,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../pyramid.cpp \
 		../Objeto.cpp \
 		../BlocoTerra.cpp \
-		../floor.cpp
+		../floor.cpp \
+		../woodblock.cpp
 QMAKE_TARGET  = GLUTdoZero20241
 DESTDIR       = 
 TARGET        = GLUTdoZero20241
@@ -385,9 +389,9 @@ main.o: ../main.cpp ../gui_glut/gui.h \
 		../bib/Desenha.h \
 		../bib/model3ds.h \
 		../pyramid.h \
+		../floor.h \
 		../BlocoTerra.h \
-		../Objeto.h \
-		../floor.h
+		../Objeto.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 Camera.o: ../bib/Camera.cpp ../bib/Camera.h \
@@ -482,6 +486,17 @@ floor.o: ../floor.cpp ../floor.h \
 		../bib/Desenha.h \
 		../bib/model3ds.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o floor.o ../floor.cpp
+
+woodblock.o: ../woodblock.cpp ../woodblock.h \
+		../gui_glut/gui.h \
+		../gui_glut/extra.h \
+		../bib/CameraDistante.h \
+		../bib/Camera.h \
+		../bib/Vetor3D.h \
+		../bib/CameraJogo.h \
+		../bib/Desenha.h \
+		../bib/model3ds.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o woodblock.o ../woodblock.cpp
 
 ####### Install
 

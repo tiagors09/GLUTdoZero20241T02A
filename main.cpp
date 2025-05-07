@@ -5,6 +5,7 @@ using namespace std;
 #include <gui.h>
 #include "pyramid.h"
 #include "floor.h"
+#include "woodblock.h"
 
 Vetor3D posEsfera = Vetor3D(2,1,0);
 float raioEsfera = 1;
@@ -28,6 +29,9 @@ void desenha() {
 
             Floor chao(3, 5);
             chao.desenha();
+
+            WoodBlock wb;
+            wb.desenha(Vetor3D(0,1,0), Vetor3D(0,0,0), Vetor3D(1,1,1));
         }
     GUI::displayEnd();
 }

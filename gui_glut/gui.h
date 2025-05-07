@@ -1,6 +1,21 @@
 #ifndef GUI_H
 #define GUI_H
 
+enum { GRANITO = 0,
+       MARMORE = 1,
+       LADRILHO = 2,
+       REFRI = 3,
+       SKY = 4,
+       KICK_ASS = 5,
+       QUADRICULADO = 6,
+       OBAMA = 7,
+       WOOD = 8,
+       GRASS = 9,
+       GRASS2 = 10,
+       DIRT = 11,
+       TREE_SIDE = 12,
+     };
+
 typedef void (* displayFunction)( void );
 typedef void (* keyFunction)( unsigned char, int, int );
 typedef void (* mouseButtonFunction)( int, int, int, int );

@@ -6,8 +6,8 @@
 
 //texture
 bool renderTexture = true;
-GLuint tList[12]; // Array of 4 texture objects
-enum { GRANITO = 0, MARMORE, LADRILHO, REFRI, SKY, KICK_ASS, QUADRICULADO, OBAMA, WOOD, GRASS, GRASS2, DIRT };
+GLuint tList[13]; // Array of 4 texture objects
+
 int texture_id = 0;
 bool texture_automatic = false;
 enum { OBJECT = 0, EYE, SPHERE_MAP };
@@ -76,6 +76,10 @@ void GUI::loadTextures() {
     glBindTexture(GL_TEXTURE_2D, tList[DIRT]);
     //carrega a imagem e seta parametros de mapeamento de textura
     OT::loadTexture( "../textures/minecraft/textures/blocks/dirt.png", true );
+
+    glBindTexture(GL_TEXTURE_2D, tList[TREE_SIDE]);
+    //carrega a imagem e seta parametros de mapeamento de textura
+    OT::loadTexture( "../textures/minecraft/textures/blocks/tree_spruce.png", true );
 }
 
 void GUI::habilitaTextura( bool renderTexture, bool texture_automatic, int texture_mode ) {
