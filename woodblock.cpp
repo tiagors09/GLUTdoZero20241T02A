@@ -52,7 +52,7 @@ void WoodBlock::desenha(Vetor3D t, Vetor3D a, Vetor3D s) {
     GUI::desabilitaTextura(true, false);
 
     GUI::habilitaTextura(true, false, 0);
-    GUI::selecionaTextura(TREE_SIDE);
+    GUI::selecionaTextura(TREE_TOP);
         // Cima
         glBegin(GL_POLYGON);
             glNormal3f(0,0,1);

@@ -23,7 +23,9 @@ SOURCES += main.cpp \
     Objeto.cpp \
     BlocoTerra.cpp \
     floor.cpp \
-    woodblock.cpp
+    woodblock.cpp \
+    treetrunk.cpp \
+    leafblock.cpp
 
 HEADERS += \
     bib/Camera.h \
@@ -39,4 +41,6 @@ HEADERS += \
     Objeto.h \
     BlocoTerra.h \
     floor.h \
-    woodblock.h
+    woodblock.h \
+    treetrunk.h \
+    leafblock.h

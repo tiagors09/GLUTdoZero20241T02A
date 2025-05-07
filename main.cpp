@@ -6,6 +6,7 @@ using namespace std;
 #include "pyramid.h"
 #include "floor.h"
 #include "woodblock.h"
+#include "treetrunk.h"
 
 Vetor3D posEsfera = Vetor3D(2,1,0);
 float raioEsfera = 1;
@@ -30,8 +31,8 @@ void desenha() {
             Floor chao(3, 5);
             chao.desenha();
 
-            WoodBlock wb;
-            wb.desenha(Vetor3D(0,1,0), Vetor3D(0,0,0), Vetor3D(1,1,1));
+            TreeTrunk tt(Vetor3D(0,1,0), 3);
+            tt.desenha();
         }
     GUI::displayEnd();
 }

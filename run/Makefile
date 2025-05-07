@@ -66,7 +66,9 @@ SOURCES       = ../main.cpp \
 		../Objeto.cpp \
 		../BlocoTerra.cpp \
 		../floor.cpp \
-		../woodblock.cpp 
+		../woodblock.cpp \
+		../treetrunk.cpp \
+		../leafblock.cpp 
 OBJECTS       = main.o \
 		Camera.o \
 		CameraDistante.o \
@@ -81,7 +83,9 @@ OBJECTS       = main.o \
 		Objeto.o \
 		BlocoTerra.o \
 		floor.o \
-		woodblock.o
+		woodblock.o \
+		treetrunk.o \
+		leafblock.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -166,7 +170,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		Objeto.h \
 		BlocoTerra.h \
 		floor.h \
-		woodblock.h ../main.cpp \
+		woodblock.h \
+		treetrunk.h \
+		leafblock.h ../main.cpp \
 		../bib/Camera.cpp \
 		../bib/CameraDistante.cpp \
 		../bib/CameraJogo.cpp \
@@ -180,7 +186,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../Objeto.cpp \
 		../BlocoTerra.cpp \
 		../floor.cpp \
-		../woodblock.cpp
+		../woodblock.cpp \
+		../treetrunk.cpp \
+		../leafblock.cpp
 QMAKE_TARGET  = GLUTdoZero20241
 DESTDIR       = 
 TARGET        = GLUTdoZero20241
@@ -391,7 +399,9 @@ main.o: ../main.cpp ../gui_glut/gui.h \
 		../pyramid.h \
 		../floor.h \
 		../BlocoTerra.h \
-		../Objeto.h
+		../Objeto.h \
+		../woodblock.h \
+		../treetrunk.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 Camera.o: ../bib/Camera.cpp ../bib/Camera.h \
@@ -488,6 +498,7 @@ floor.o: ../floor.cpp ../floor.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o floor.o ../floor.cpp
 
 woodblock.o: ../woodblock.cpp ../woodblock.h \
+		../Objeto.h \
 		../gui_glut/gui.h \
 		../gui_glut/extra.h \
 		../bib/CameraDistante.h \
@@ -497,6 +508,21 @@ woodblock.o: ../woodblock.cpp ../woodblock.h \
 		../bib/Desenha.h \
 		../bib/model3ds.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o woodblock.o ../woodblock.cpp
+
+treetrunk.o: ../treetrunk.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o treetrunk.o ../treetrunk.cpp
+
+leafblock.o: ../leafblock.cpp ../leafblock.h \
+		../Objeto.h \
+		../gui_glut/gui.h \
+		../gui_glut/extra.h \
+		../bib/CameraDistante.h \
+		../bib/Camera.h \
+		../bib/Vetor3D.h \
+		../bib/CameraJogo.h \
+		../bib/Desenha.h \
+		../bib/model3ds.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o leafblock.o ../leafblock.cpp
 
 ####### Install
 
