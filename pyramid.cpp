@@ -13,6 +13,8 @@ Pyramid::Pyramid(float size)
 }
 
 void Pyramid::draw() {
+    GUI::habilitaTextura(true, false, 0);
+    GUI::selecionaTextura(7);
     // Frente
     glBegin(GL_POLYGON);
         glNormal3f(0,0,size/2);
@@ -58,4 +60,5 @@ void Pyramid::draw() {
         glTexCoord2f(1, 1); glVertex3f(size,0,-size);
         glTexCoord2f(0, 1); glVertex3f(size,0,0);
     glEnd();
+    GUI::desabilitaTextura(true, false);
 }

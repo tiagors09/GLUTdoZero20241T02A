@@ -2,18 +2,13 @@
 
 #include <gui.h>
 
-BlocoTerra::BlocoTerra()
-{
-    this->selecionado = true;
+BlocoTerra::BlocoTerra() {
+
 }
 
-void BlocoTerra::desenha() {
-    if (selecionado) {
-        GUI::setColor(1,0,1);
-    } else {
-        GUI::setColor(1,1,0);
-    }
-
+void BlocoTerra::desenha(Vetor3D t, Vetor3D a, Vetor3D s) {
+    glPushMatrix();
+    Objeto::desenha(t, a, s);
 
     GUI::habilitaTextura(true, false, 0);
     GUI::selecionaTextura(9);
@@ -80,4 +75,5 @@ void BlocoTerra::desenha() {
             glTexCoord2f(0,1); glVertex3f(-.5,0,.5);   // canto superior esquerdo
         glEnd();
     GUI::desabilitaTextura(true, false);
+    glPopMatrix();
 }

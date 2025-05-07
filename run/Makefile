@@ -64,7 +64,8 @@ SOURCES       = ../main.cpp \
 		../gui_glut/OpenTextures.cpp \
 		../pyramid.cpp \
 		../Objeto.cpp \
-		../BlocoTerra.cpp 
+		../BlocoTerra.cpp \
+		../floor.cpp 
 OBJECTS       = main.o \
 		Camera.o \
 		CameraDistante.o \
@@ -77,7 +78,8 @@ OBJECTS       = main.o \
 		OpenTextures.o \
 		pyramid.o \
 		Objeto.o \
-		BlocoTerra.o
+		BlocoTerra.o \
+		floor.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -160,7 +162,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		gui_glut/OpenTextures.h \
 		pyramid.h \
 		Objeto.h \
-		BlocoTerra.h ../main.cpp \
+		BlocoTerra.h \
+		floor.h ../main.cpp \
 		../bib/Camera.cpp \
 		../bib/CameraDistante.cpp \
 		../bib/CameraJogo.cpp \
@@ -172,7 +175,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../gui_glut/OpenTextures.cpp \
 		../pyramid.cpp \
 		../Objeto.cpp \
-		../BlocoTerra.cpp
+		../BlocoTerra.cpp \
+		../floor.cpp
 QMAKE_TARGET  = GLUTdoZero20241
 DESTDIR       = 
 TARGET        = GLUTdoZero20241
@@ -380,8 +384,10 @@ main.o: ../main.cpp ../gui_glut/gui.h \
 		../bib/CameraJogo.h \
 		../bib/Desenha.h \
 		../bib/model3ds.h \
+		../pyramid.h \
+		../BlocoTerra.h \
 		../Objeto.h \
-		../BlocoTerra.h
+		../floor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 Camera.o: ../bib/Camera.cpp ../bib/Camera.h \
@@ -463,6 +469,19 @@ BlocoTerra.o: ../BlocoTerra.cpp ../BlocoTerra.h \
 		../bib/Desenha.h \
 		../bib/model3ds.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BlocoTerra.o ../BlocoTerra.cpp
+
+floor.o: ../floor.cpp ../floor.h \
+		../BlocoTerra.h \
+		../Objeto.h \
+		../gui_glut/gui.h \
+		../gui_glut/extra.h \
+		../bib/CameraDistante.h \
+		../bib/Camera.h \
+		../bib/Vetor3D.h \
+		../bib/CameraJogo.h \
+		../bib/Desenha.h \
+		../bib/model3ds.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o floor.o ../floor.cpp
 
 ####### Install
 

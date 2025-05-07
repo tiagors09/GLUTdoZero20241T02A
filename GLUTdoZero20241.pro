@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     gui_glut/OpenTextures.cpp \
     pyramid.cpp \
     Objeto.cpp \
-    BlocoTerra.cpp
+    BlocoTerra.cpp \
+    floor.cpp
 
 HEADERS += \
     bib/Camera.h \
@@ -35,4 +36,5 @@ HEADERS += \
     gui_glut/OpenTextures.h \
     pyramid.h \
     Objeto.h \
-    BlocoTerra.h
+    BlocoTerra.h \
+    floor.h
