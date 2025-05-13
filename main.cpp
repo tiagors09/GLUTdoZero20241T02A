@@ -23,14 +23,13 @@ void desenha() {
 
             GUI::setColor(1,1,1);
 
-            GUI::habilitaTextura(true, false, 0);
-            GUI::selecionaTextura(10);
-                glClearColor(0.529f, 0.808f, 0.922f, 1.0f);
-                GUI::drawFloor(10, 10);
-            GUI::desabilitaTextura(true, false);
+            glClearColor(0.529f, 0.808f, 0.922f, 1.0f);
 
             Floor chao(3, 5);
-            chao.desenha();
+            chao.desenha(1);
+
+            Floor chao2(10,10);
+            chao2.desenha(0);
 
             TreeTrunk tt(Vetor3D(0,1,0), 3);
             tt.desenha();
@@ -39,15 +38,15 @@ void desenha() {
 
             tg[0].desenha(Vetor3D(1, 1, 0));     // Mantido
 
-            tg[1].desenha(Vetor3D(-2, 0, 1));
-            tg[2].desenha(Vetor3D(3, 0, -1));
-            tg[3].desenha(Vetor3D(-4, 0, 2));
-            tg[4].desenha(Vetor3D(0, 0, 3));
-            tg[5].desenha(Vetor3D(2, 0, 2));
-            tg[6].desenha(Vetor3D(-1, 0, -3));
-            tg[7].desenha(Vetor3D(4, 0, 1));
-            tg[8].desenha(Vetor3D(-3, 0, -2));
-            tg[9].desenha(Vetor3D(0, 0, -4));
+            tg[1].desenha(Vetor3D(-2, 1, 1));
+            tg[2].desenha(Vetor3D(3, 1, -1));
+            tg[3].desenha(Vetor3D(-4, 1, 2));
+            tg[4].desenha(Vetor3D(0, 1, 3));
+            tg[5].desenha(Vetor3D(2, 1, 2));
+            tg[6].desenha(Vetor3D(-1, 1, -3));
+            tg[7].desenha(Vetor3D(4, 1, 1));
+            tg[8].desenha(Vetor3D(-3, 1, -2));
+            tg[9].desenha(Vetor3D(0, 1, -4));
 
         }
     GUI::displayEnd();

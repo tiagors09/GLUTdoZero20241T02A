@@ -7,7 +7,7 @@
 class Floor {
 public:
     Floor(int m, int n);  // largura (x), profundidade (z)
-    void desenha();
+    void desenha(float y = 0);
 
 private:
     int m, n;
