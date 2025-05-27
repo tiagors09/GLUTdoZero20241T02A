@@ -12,6 +12,7 @@ using namespace std;
 
 Vetor3D t = Vetor3D(0,0,0);
 Pivot p;
+BlocoTerra bt;
 std::vector<Objeto> objetos;
 void desenha() {
     GUI::displayInit();
@@ -54,6 +55,10 @@ void teclado(unsigned char tecla, int x, int y) {
             break;
         case 'r':
             t.z -= 1;
+            break;
+        case ' ':
+            bt.t = t;
+            objetos.push_back(bt);
             break;
         case 'l':
             glutGUI::trans_luz = !glutGUI::trans_luz;
