@@ -3,9 +3,9 @@
 
 LeafBlock::LeafBlock() {}
 
-void LeafBlock::desenha(Vetor3D t, Vetor3D a, Vetor3D s) {
+void LeafBlock::desenha() {
     glPushMatrix();
-    Objeto::desenha(t, a, s);
+    Objeto::desenha();
 
     GUI::habilitaTextura(true, false, 0);
     GUI::selecionaTextura(LEAF); // ou uma textura de folhas

@@ -1,14 +1,16 @@
-#ifndef TALLGRASS_H
-#define TALLGRASS_H
+#ifndef PIVOT_H
+#define PIVOT_H
 
 #include "Objeto.h"    // Se você tiver uma classe base Objeto
 #include "gui.h"   // Para usar Vetor3D
 
-class TallGrass : public Objeto {
+class Pivot: public Objeto
+{
 public:
-    TallGrass();
+    int texture;
+    Pivot();
 
     void desenha(); // t = posição, a = ângulo, s = escala
 };
 
-#endif // TALLGRASS_H
+#endif // PIVOT_H

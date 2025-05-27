@@ -6,7 +6,7 @@
 class LeafBlock : public Objeto {
 public:
     LeafBlock();
-    void desenha(Vetor3D t, Vetor3D a, Vetor3D s);
+    void desenha();
 };
 
 #endif

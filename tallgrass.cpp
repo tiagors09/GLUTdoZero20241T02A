@@ -4,9 +4,9 @@
 
 TallGrass::TallGrass() {}
 
-void TallGrass::desenha(Vetor3D t, Vetor3D a, Vetor3D s) {
+void TallGrass::desenha() {
     glPushMatrix();
-    Objeto::desenha(t, a, s);  // posiciona
+    Objeto::desenha();  // posiciona
 
     glDisable(GL_CULL_FACE); // desativa "back-face culling" para renderizar os dois lados
 

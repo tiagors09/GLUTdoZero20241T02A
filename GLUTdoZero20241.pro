@@ -26,7 +26,8 @@ SOURCES += main.cpp \
     woodblock.cpp \
     treetrunk.cpp \
     leafblock.cpp \
-    tallgrass.cpp
+    tallgrass.cpp \
+    pivot.cpp
 
 HEADERS += \
     bib/Camera.h \
@@ -45,4 +46,5 @@ HEADERS += \
     woodblock.h \
     treetrunk.h \
     leafblock.h \
-    tallgrass.h
+    tallgrass.h \
+    pivot.h

@@ -1,17 +1,12 @@
-#include "woodblock.h"
+#include "pivot.h"
 
-#include <gui.h>
+#include "gui.h"   // Para usar Vetor3D
 
-WoodBlock::WoodBlock() {
+Pivot::Pivot(){}
 
-}
-
-void WoodBlock::desenha() {
+void Pivot::desenha() {
     glPushMatrix();
-    Objeto::desenha();
-
-    GUI::habilitaTextura(true, false, 0);
-    GUI::selecionaTextura(TREE_SIDE);
+        Objeto::desenha();
 
         // Frente
         glBegin(GL_POLYGON);
@@ -49,10 +44,6 @@ void WoodBlock::desenha() {
             glTexCoord2f(0,0); glVertex3f(.5,1,-.5);
         glEnd();
 
-    GUI::desabilitaTextura(true, false);
-
-    GUI::habilitaTextura(true, false, 0);
-    GUI::selecionaTextura(TREE_TOP);
         // Cima
         glBegin(GL_POLYGON);
             glNormal3f(0,0,1);
@@ -61,11 +52,7 @@ void WoodBlock::desenha() {
             glTexCoord2f(1,0); glVertex3f(-.5,1,-.5);
             glTexCoord2f(0,0); glVertex3f(-.5,1,.5);
         glEnd();
-    GUI::desabilitaTextura(true, false);
 
-
-    GUI::habilitaTextura(true, false, 0);
-    GUI::selecionaTextura(TREE_SIDE);
         // Baixo (corrigido)
         glBegin(GL_POLYGON);
             glNormal3f(0,-1,0);
@@ -74,6 +61,5 @@ void WoodBlock::desenha() {
             glTexCoord2f(1,1); glVertex3f(.5,0,.5);    // canto superior direito
             glTexCoord2f(0,1); glVertex3f(-.5,0,.5);   // canto superior esquerdo
         glEnd();
-    GUI::desabilitaTextura(true, false);
     glPopMatrix();
 }

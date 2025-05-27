@@ -10,7 +10,8 @@ void Floor::desenha(float y) {
         for (int j = 0; j < n; ++j) {
             float x = i - m / 2.0f + 0.5f; // centraliza no (0,0)
             float z = j - n / 2.0f + 0.5f;
-            blocos[index++].desenha(Vetor3D(x, y, z), Vetor3D(0,0,0), Vetor3D(1,1,1));
+            blocos[index++].t = Vetor3D(x, y, z);
+            blocos[index++].desenha();
         }
     }
 }

@@ -14,7 +14,8 @@ TreeTrunk::TreeTrunk(Vetor3D posicaoBase, int alturaMinima) {
 void TreeTrunk::desenha() {
     for (int i = 0; i < altura; ++i) {
         Vetor3D pos = base + Vetor3D(0, i, 0);
-        blocos[i].desenha(pos, Vetor3D(0,0,0), Vetor3D(1,1,1));
+        blocos[i].t = pos;
+        blocos[i].desenha();
     }
 
     // Desenha a pirâmide de folhas
@@ -30,7 +31,8 @@ void TreeTrunk::desenha() {
                     Vetor3D posFolha = base + Vetor3D(x, topo + y, z);
 
                     LeafBlock lb;
-                    lb.desenha(Vetor3D(posFolha.x, posFolha.y, posFolha.z), Vetor3D(0,0,0), Vetor3D(1,1,1));
+                    lb.t = Vetor3D(posFolha.x, posFolha.y, posFolha.z);
+                    lb.desenha();
                 }
             }
         }

@@ -7,7 +7,7 @@ Objeto::Objeto()
 
 }
 
-void Objeto::desenha(Vetor3D t, Vetor3D a, Vetor3D s)
+void Objeto::desenha()
 {
     // T.Rz.Ry.Rx.S (correspondente ao T'' da Q1 da lista 1)
     glTranslatef(t.x,t.y,t.z); //transformacao (matriz) mais a esquerda (mais global)

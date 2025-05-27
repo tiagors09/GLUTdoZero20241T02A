@@ -6,9 +6,9 @@ BlocoTerra::BlocoTerra() {
 
 }
 
-void BlocoTerra::desenha(Vetor3D t, Vetor3D a, Vetor3D s) {
+void BlocoTerra::desenha() {
     glPushMatrix();
-    Objeto::desenha(t, a, s);
+    Objeto::desenha();
 
     GUI::habilitaTextura(true, false, 0);
     GUI::selecionaTextura(GRASS);

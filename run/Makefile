@@ -69,7 +69,8 @@ SOURCES       = ../main.cpp \
 		../woodblock.cpp \
 		../treetrunk.cpp \
 		../leafblock.cpp \
-		../tallgrass.cpp 
+		../tallgrass.cpp \
+		../pivot.cpp 
 OBJECTS       = main.o \
 		Camera.o \
 		CameraDistante.o \
@@ -87,7 +88,8 @@ OBJECTS       = main.o \
 		woodblock.o \
 		treetrunk.o \
 		leafblock.o \
-		tallgrass.o
+		tallgrass.o \
+		pivot.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -175,7 +177,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		woodblock.h \
 		treetrunk.h \
 		leafblock.h \
-		tallgrass.h ../main.cpp \
+		tallgrass.h \
+		pivot.h ../main.cpp \
 		../bib/Camera.cpp \
 		../bib/CameraDistante.cpp \
 		../bib/CameraJogo.cpp \
@@ -192,7 +195,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../woodblock.cpp \
 		../treetrunk.cpp \
 		../leafblock.cpp \
-		../tallgrass.cpp
+		../tallgrass.cpp \
+		../pivot.cpp
 QMAKE_TARGET  = GLUTdoZero20241
 DESTDIR       = 
 TARGET        = GLUTdoZero20241
@@ -552,6 +556,18 @@ tallgrass.o: ../tallgrass.cpp ../tallgrass.h \
 		../bib/Desenha.h \
 		../bib/model3ds.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tallgrass.o ../tallgrass.cpp
+
+pivot.o: ../pivot.cpp ../pivot.h \
+		../Objeto.h \
+		../gui_glut/gui.h \
+		../gui_glut/extra.h \
+		../bib/CameraDistante.h \
+		../bib/Camera.h \
+		../bib/Vetor3D.h \
+		../bib/CameraJogo.h \
+		../bib/Desenha.h \
+		../bib/model3ds.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pivot.o ../pivot.cpp
 
 ####### Install
 
