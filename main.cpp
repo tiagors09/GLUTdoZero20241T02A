@@ -13,7 +13,8 @@ using namespace std;
 Vetor3D t = Vetor3D(0,0,0);
 Pivot p;
 BlocoTerra bt;
-std::vector<Objeto> objetos;
+std::vector<Objeto*> objetos;
+
 void desenha() {
     GUI::displayInit();
         GUI::setLight(0,0,3,0,true,false);
@@ -27,8 +28,8 @@ void desenha() {
         p.t = t;
         p.desenha();
 
-        for (Objeto o : objetos)
-            o.desenha();
+        for (Objeto* o : objetos)
+            o->desenha();
     GUI::displayEnd();
 }
 
@@ -57,8 +58,8 @@ void teclado(unsigned char tecla, int x, int y) {
             t.z -= 1;
             break;
         case ' ':
-            bt.t = t;
-            objetos.push_back(bt);
+            objetos.push_back(new BlocoTerra());
+            objetos.back()->t = t;
             break;
         case 'l':
             glutGUI::trans_luz = !glutGUI::trans_luz;
@@ -75,4 +76,9 @@ void teclado(unsigned char tecla, int x, int y) {
 int main()
 {
     GUI gui = GUI(800,600,desenha,teclado);
+
+    for (Objeto* o : objetos)
+            delete o;
+
+    return 0;
 }
